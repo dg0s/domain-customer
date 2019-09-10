@@ -1,4 +1,4 @@
-package com.wb3.hexarch.domain.customer.usecase;
+package com.wb3.hexarch.domain.customer.control;
 
 import com.wb3.hexarch.domain.UseCase;
 import com.wb3.hexarch.domain.customer.boundary.CustomerRequest;
