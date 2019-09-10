@@ -6,13 +6,16 @@ import com.wb3.hexarch.domain.customer.gateway.CustomerGateway;
 import com.wb3.hexarch.domain.customer.boundary.CustomerRequest;
 import com.wb3.hexarch.domain.customer.control.UpdateCustomer;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
+@DisplayName("Customer Use Cases")
 public class CustomerTests {
 
     @Test
+    @DisplayName("Create Customer")
     // Given the need to create a new customer
     // When I supply the first name as "Bill"
     //  and the last name as "Bensing"
@@ -33,6 +36,7 @@ public class CustomerTests {
     }
 
     @Test
+    @DisplayName("Update Customer")
     // Given the need to update an existing customer
     // When the customer id is "bbe2ee9e-dda1-4d24-92c2-91e35ea55a49"
     //  and the first name is changed to "Billy"
