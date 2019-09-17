@@ -1,18 +1,27 @@
 package com.wb3tech.hexarch.domain.customer;
 
+import com.wb3.hexarch.domain.UsecaseHandler;
 import com.wb3.hexarch.domain.customer.control.CreateCustomer;
 import com.wb3.hexarch.domain.customer.entity.CustomerEntity;
 import com.wb3.hexarch.domain.customer.gateway.CustomerGateway;
 import com.wb3.hexarch.domain.customer.boundary.CustomerRequest;
 import com.wb3.hexarch.domain.customer.control.UpdateCustomer;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
 @DisplayName("Customer Use Cases")
-public class CustomerTests {
+class CustomerTests {
+
+    private UsecaseHandler usecaseHandler;
+
+    @BeforeEach
+    void setup() {
+        this.usecaseHandler = new UsecaseHandler();
+    }
 
     @Test
     @DisplayName("Create Customer")
@@ -27,7 +36,7 @@ public class CustomerTests {
 
         CustomerRequest request = new CustomerTestRequest("Bill", "Bensing");
         CustomerGatewaySpy gateway = new CustomerGatewaySpy();
-        new CreateCustomer(request, gateway).execute();
+        this.usecaseHandler.Invoke(new CreateCustomer(request, gateway));
 
         Assertions.assertNotNull(request.getId());
         Assertions.assertEquals("Bill", request.getFirstName());
@@ -49,7 +58,7 @@ public class CustomerTests {
         UUID customerId = UUID.fromString("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49");
         CustomerRequest updateCustomer = new CustomerTestRequest(customerId, "Billy", "Bensing III");
         CustomerGatewaySpy gateway = new CustomerGatewaySpy();
-        new UpdateCustomer(updateCustomer, gateway).execute();
+        this.usecaseHandler.Invoke(new UpdateCustomer(updateCustomer, gateway));
 
         Assertions.assertEquals("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49", updateCustomer.getId().toString());
         Assertions.assertEquals("Billy", updateCustomer.getFirstName());
