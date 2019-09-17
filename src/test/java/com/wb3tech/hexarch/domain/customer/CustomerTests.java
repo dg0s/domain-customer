@@ -17,10 +17,12 @@ import java.util.UUID;
 class CustomerTests {
 
     private UsecaseHandler usecaseHandler;
+    private CustomerGatewaySpy gateway;
 
     @BeforeEach
     void setup() {
         this.usecaseHandler = new UsecaseHandler();
+        this.gateway = new CustomerGatewaySpy();
     }
 
     @Test
@@ -35,13 +37,13 @@ class CustomerTests {
     void CreateCustomer() {
 
         CustomerRequest request = new CustomerTestRequest("Bill", "Bensing");
-        CustomerGatewaySpy gateway = new CustomerGatewaySpy();
-        this.usecaseHandler.Invoke(new CreateCustomer(request, gateway));
+
+        this.usecaseHandler.Invoke(new CreateCustomer(request, this.gateway));
 
         Assertions.assertNotNull(request.getId());
         Assertions.assertEquals("Bill", request.getFirstName());
         Assertions.assertEquals("Bensing", request.getLastName());
-        Assertions.assertTrue(gateway.CreateWasCalled());
+        Assertions.assertTrue(this.gateway.CreateWasCalled());
     }
 
     @Test
@@ -57,13 +59,13 @@ class CustomerTests {
 
         UUID customerId = UUID.fromString("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49");
         CustomerRequest updateCustomer = new CustomerTestRequest(customerId, "Billy", "Bensing III");
-        CustomerGatewaySpy gateway = new CustomerGatewaySpy();
-        this.usecaseHandler.Invoke(new UpdateCustomer(updateCustomer, gateway));
+
+        this.usecaseHandler.Invoke(new UpdateCustomer(updateCustomer, this.gateway));
 
         Assertions.assertEquals("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49", updateCustomer.getId().toString());
         Assertions.assertEquals("Billy", updateCustomer.getFirstName());
         Assertions.assertEquals("Bensing III", updateCustomer.getLastName());
-        Assertions.assertTrue(gateway.UpdateWasCalled());
+        Assertions.assertTrue(this.gateway.UpdateWasCalled());
 
     }
 
