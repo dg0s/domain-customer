@@ -1,12 +1,12 @@
-package com.wb3.hexarch.domain.customer.control;
+package com.wb3.bce.domain.customer.control;
 
-import com.wb3.hexarch.domain.UseCase;
-import com.wb3.hexarch.domain.customer.entity.Customer;
-import com.wb3.hexarch.domain.customer.entity.CustomerEntity;
-import com.wb3.hexarch.domain.customer.gateway.CustomerGateway;
-import com.wb3.hexarch.domain.customer.boundary.CustomerRequest;
+import com.wb3.bce.domain.Usecase;
+import com.wb3.bce.domain.customer.entity.Customer;
+import com.wb3.bce.domain.customer.entity.CustomerEntity;
+import com.wb3.bce.domain.customer.gateway.CustomerGateway;
+import com.wb3.bce.domain.customer.boundary.CustomerRequest;
 
-public class CreateCustomer implements UseCase {
+public class CreateCustomer implements Usecase {
 
     private CustomerRequest request;
     private CustomerGateway customerGateway;

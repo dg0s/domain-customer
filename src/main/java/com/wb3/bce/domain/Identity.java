@@ -1,4 +1,4 @@
-package com.wb3.hexarch.domain;
+package com.wb3.bce.domain;
 
 import java.util.UUID;
 

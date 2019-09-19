@@ -1,11 +1,11 @@
 package com.wb3tech.hexarch.domain.customer;
 
-import com.wb3.hexarch.domain.UsecaseHandler;
-import com.wb3.hexarch.domain.customer.control.CreateCustomer;
-import com.wb3.hexarch.domain.customer.entity.CustomerEntity;
-import com.wb3.hexarch.domain.customer.gateway.CustomerGateway;
-import com.wb3.hexarch.domain.customer.boundary.CustomerRequest;
-import com.wb3.hexarch.domain.customer.control.UpdateCustomer;
+import com.wb3.bce.domain.UsecaseHandler;
+import com.wb3.bce.domain.customer.control.CreateCustomer;
+import com.wb3.bce.domain.customer.entity.CustomerEntity;
+import com.wb3.bce.domain.customer.gateway.CustomerGateway;
+import com.wb3.bce.domain.customer.boundary.CustomerRequest;
+import com.wb3.bce.domain.customer.control.UpdateCustomer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

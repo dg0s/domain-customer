@@ -1,4 +1,4 @@
-package com.wb3.hexarch.domain.customer.boundary;
+package com.wb3.bce.domain.customer.boundary;
 
 import java.util.UUID;
 

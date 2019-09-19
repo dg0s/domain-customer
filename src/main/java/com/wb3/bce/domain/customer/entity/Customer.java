@@ -1,8 +1,8 @@
-package com.wb3.hexarch.domain.customer.entity;
+package com.wb3.bce.domain.customer.entity;
 
 
-import com.wb3.hexarch.domain.Identity;
-import com.wb3.hexarch.domain.customer.boundary.CustomerRequest;
+import com.wb3.bce.domain.Identity;
+import com.wb3.bce.domain.customer.boundary.CustomerRequest;
 
 public class Customer extends CustomerEntity {
 

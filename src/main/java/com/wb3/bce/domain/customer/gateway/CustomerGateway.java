@@ -1,6 +1,6 @@
-package com.wb3.hexarch.domain.customer.gateway;
+package com.wb3.bce.domain.customer.gateway;
 
-import com.wb3.hexarch.domain.customer.entity.CustomerEntity;
+import com.wb3.bce.domain.customer.entity.CustomerEntity;
 
 public interface CustomerGateway {
 
