@@ -62,4 +62,23 @@ class CustomerTests {
 
     }
 
+    @Test
+    @DisplayName("Remove Customer")
+        // Given the need to update an existing customer
+        // When the customer id is "bbe2ee9e-dda1-4d24-92c2-91e35ea55a49"
+        //  and the first name is changed to "Billy"
+        //  and the last name is changed to "Bensing III"
+        // Then the customer should be updated with a first name of "Billy"
+        //  and the a last name of "Bensing III"
+        //  and the CustomerGateway.Update(...) must be invoked
+    void RemoveCustomer() {
+
+        var request = new RemoveCustomerRequest(UUID.fromString("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49"));
+        var handler = new RemoveCustomerUseCaseRequestHandler(this.gateway);
+
+        handler.Handle(request);
+
+        Assertions.assertTrue(this.gateway.RemoveWasCalled());
+
+    }
 }

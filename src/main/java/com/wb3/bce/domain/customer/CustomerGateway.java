@@ -5,4 +5,6 @@ public interface CustomerGateway {
     void Create(CustomerEntity customer);
 
     void Update(CustomerEntity customer);
+
+    void Remove(CustomerEntity customer);
 }
