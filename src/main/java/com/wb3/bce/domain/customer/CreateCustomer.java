@@ -13,7 +13,7 @@ public class CreateCustomer implements UseCase {
     }
 
     public void execute() {
-        CustomerEntity customer = new Customer(this.request.getFirstName(), this.request.getLastName());
+        var customer = new Customer(this.request.getFirstName(), this.request.getLastName());
         this.customerGateway.Create(customer);
         this.request.setId(customer.getId());
     }

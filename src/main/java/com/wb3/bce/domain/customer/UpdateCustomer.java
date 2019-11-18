@@ -13,7 +13,7 @@ class UpdateCustomer implements UseCase {
     }
 
     public void execute() {
-        CustomerEntity customer = new Customer(this.request);
+        var customer = new Customer(this.request);
         this.gateway.Update(customer);
     }
 }
