@@ -1,9 +1,5 @@
 package com.wb3.bce.domain.customer;
 
-import com.wb3.bce.domain.customer.create.CreateCustomerRequest;
-import com.wb3.bce.domain.customer.create.CreateCustomerUseCaseRequestHandler;
-import com.wb3.bce.domain.customer.update.UpdateCustomerRequest;
-import com.wb3.bce.domain.customer.update.UpdateCustomerUseCaseRequestHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package com.wb3.bce.domain.customer.create;
+package com.wb3.bce.domain.customer;
 
 import com.wb3.bce.domain.customer.CustomerRequest;
 

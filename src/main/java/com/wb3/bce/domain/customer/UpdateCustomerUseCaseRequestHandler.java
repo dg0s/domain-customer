@@ -1,7 +1,6 @@
-package com.wb3.bce.domain.customer.update;
+package com.wb3.bce.domain.customer;
 
 import com.wb3.bce.domain.kernal.UseCaseRequestHandler;
-import com.wb3.bce.domain.customer.CustomerGateway;
 
 public class UpdateCustomerUseCaseRequestHandler implements UseCaseRequestHandler<UpdateCustomerRequest> {
 
