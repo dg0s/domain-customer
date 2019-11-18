@@ -1,9 +1,9 @@
 package com.wb3.bce.domain.customer;
 
 import com.wb3.bce.domain.customer.create.CreateCustomerRequest;
-import com.wb3.bce.domain.customer.create.CreateCustomerRequestHandler;
+import com.wb3.bce.domain.customer.create.CreateCustomerUseCaseRequestHandler;
 import com.wb3.bce.domain.customer.update.UpdateCustomerRequest;
-import com.wb3.bce.domain.customer.update.UpdateCustomerRequestHandler;
+import com.wb3.bce.domain.customer.update.UpdateCustomerUseCaseRequestHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -33,7 +33,7 @@ class CustomerTests {
     void CreateCustomer() {
 
         var request = new CreateCustomerRequest("Bill", "Bensing");
-        var handler = new CreateCustomerRequestHandler(this.gateway);
+        var handler = new CreateCustomerUseCaseRequestHandler(this.gateway);
 
         handler.Handle(request);
 
@@ -55,7 +55,7 @@ class CustomerTests {
     void UpdateCustomer() {
 
         var request = new UpdateCustomerRequest(UUID.fromString("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49"), "Billy", "Bensing III");
-        var handler = new UpdateCustomerRequestHandler(this.gateway);
+        var handler = new UpdateCustomerUseCaseRequestHandler(this.gateway);
 
         handler.Handle(request);
 

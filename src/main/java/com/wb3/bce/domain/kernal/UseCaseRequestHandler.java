@@ -1,5 +1,5 @@
 package com.wb3.bce.domain.kernal;
 
-public interface RequestHandler<Request> {
+public interface UseCaseRequestHandler<Request> {
     void Handle (Request request);
 }
