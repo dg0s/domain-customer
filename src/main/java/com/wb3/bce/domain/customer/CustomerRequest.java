@@ -1,4 +1,4 @@
-package com.wb3.bce.domain.customer.boundary;
+package com.wb3.bce.domain.customer;
 
 import java.util.UUID;
 
@@ -13,12 +13,6 @@ public abstract class CustomerRequest {
         this.lastName = lastName;
     }
 
-    public CustomerRequest(UUID id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName  = lastName;
-    }
-
     public void setId(UUID id) {
         this.id = id;
     }
@@ -27,11 +21,20 @@ public abstract class CustomerRequest {
         return this.id;
     }
 
+    protected void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getFirstName() {
         return this.firstName;
+    }
+
+    protected void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getLastName() {
         return this.lastName;
     }
+
 }

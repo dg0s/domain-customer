@@ -1,4 +1,4 @@
-package com.wb3.bce.domain;
+package com.wb3.bce.domain.kernal;
 
 import java.util.UUID;
 
@@ -10,11 +10,15 @@ public class Identity {
         this.id = UUID.randomUUID();
     }
 
-    public Identity(UUID id) {
+    Identity(UUID id) {
         this.id = id;
     }
 
     public UUID get() {
         return this.id;
+    }
+
+    public static Identity Of(UUID id) {
+        return new Identity(id);
     }
 }

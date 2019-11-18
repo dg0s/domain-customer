@@ -1,6 +1,6 @@
-package com.wb3.bce.domain.customer.entity;
+package com.wb3.bce.domain.customer;
 
-import com.wb3.bce.domain.Identity;
+import com.wb3.bce.domain.kernal.Identity;
 
 import java.util.UUID;
 
@@ -33,10 +33,10 @@ public abstract class CustomerEntity {
     }
 
     public String getFirstName() {
-        return this.lastName;
+        return this.firstName;
     }
 
     public String getLastName() {
-        return this.firstName;
+        return this.lastName;
     }
 }
