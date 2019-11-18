@@ -13,7 +13,6 @@ public class RemoveCustomerUseCaseRequestHandler implements UseCaseRequestHandle
 
     @Override
     public void Handle(RemoveCustomerRequest removeCustomerRequest) {
-        var customer = new Customer(removeCustomerRequest);
-        this.gateway.Remove(customer);
+        new RemoveCustomer(removeCustomerRequest, this.gateway).execute();
     }
 }
