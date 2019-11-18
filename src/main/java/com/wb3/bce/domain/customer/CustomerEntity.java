@@ -39,4 +39,5 @@ public abstract class CustomerEntity {
     public String getLastName() {
         return this.lastName;
     }
+
 }

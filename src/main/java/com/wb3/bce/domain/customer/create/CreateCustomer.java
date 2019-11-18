@@ -15,6 +15,7 @@ public class CreateCustomer implements UseCase {
         this.request = request;
         this.customerGateway = customerGateway;
     }
+
     public void execute() {
         CustomerEntity customer = new Customer(this.request.getFirstName(), this.request.getLastName());
         this.customerGateway.Create(customer);
