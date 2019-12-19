@@ -21,4 +21,16 @@ public class Identity {
     public static Identity Of(UUID id) {
         return new Identity(id);
     }
+
+    public boolean isValid()  {
+        return this.id != null;
+    }
+
+    public boolean isInvalid()  {
+        return !this.isValid();
+    }
+
+    public boolean equals(Identity identity) {
+        return this.id == identity.get();
+    }
 }

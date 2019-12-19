@@ -1,6 +1,5 @@
 package com.wb3.bce.domain.customer;
 
-
 import com.wb3.bce.domain.kernal.Identity;
 
 class Customer extends CustomerEntity {
@@ -10,7 +9,7 @@ class Customer extends CustomerEntity {
     }
 
     Customer(CustomerRequest request) {
-        super(request.getFirstName(), request.getLastName());
+        this(request.getFirstName(), request.getLastName());
         this.setId(Identity.Of(request.getId()));
     }
 

@@ -70,7 +70,8 @@ class CustomerTests {
     //  and the CustomerGateway.Update(...) must be invoked
     void RemoveCustomer() {
 
-        var request = new RemoveCustomerRequest(UUID.fromString("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49"));
+        var id = UUID.fromString("bbe2ee9e-dda1-4d24-92c2-91e35ea55a49");
+        var request = new RemoveCustomerRequest(id);
         var handler = new RemoveCustomerUseCaseRequestHandler(this.gateway);
 
         handler.Handle(request);
