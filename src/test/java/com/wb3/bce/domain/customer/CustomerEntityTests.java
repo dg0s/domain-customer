@@ -11,10 +11,8 @@ public class CustomerEntityTests {
     @Test @DisplayName("Customer Identity - Null identity exception thrown")
     public void NullCustomerIdentity() {
 
-        var customer = new Customer("Bill", "Bensing");
-
         try {
-            customer.setId(null);
+            new Customer(null, "Bill", "Bensing");
         } catch (Exception ex) {
             Assertions.assertSame(ex.getClass(), NullPointerException.class);
             Assertions.assertSame(ex.getMessage(),"The identity is null.");
@@ -25,11 +23,8 @@ public class CustomerEntityTests {
     @Test @DisplayName("Customer Identity - Invalid identity exception thrown")
     public void InvalidCustomerIdentity() {
 
-        var customer = new Customer("Bill", "Bensing");
-
         try {
-            var id = Identity.Of(null);
-            customer.setId(id);
+            new Customer(Identity.Of(null), "Bill", "Bensing");
         } catch (Exception ex) {
             Assertions.assertSame(ex.getClass(), IllegalArgumentException.class);
             Assertions.assertSame(ex.getMessage(),"The identity is not valid.");
@@ -40,9 +35,8 @@ public class CustomerEntityTests {
     @Test @DisplayName("Customer Identity - Valid Identity")
     public void ValidCustomerIdentity() {
 
-        var customer = new Customer("Bill", "Bensing");
         var id = new Identity();
-        customer.setId(id);
+        var customer = new Customer(id, "Bill", "Bensing");
 
         Assertions.assertTrue(id.equals(customer.getId()));
 
@@ -68,10 +62,8 @@ public class CustomerEntityTests {
     @Test @DisplayName("First Name - Trim Whitespace around first name")
     public void FirstNameWithLeadingAndTrailingWhitespace() {
 
-        var customer = new Customer(" Bill ", "Bensing");
         var id = new Identity();
-        customer.setId(id);
-
+        var customer = new Customer(id, " Bill ", "Bensing");
         Assertions.assertEquals(customer.getFirstName(), "Bill");
 
     }
@@ -100,7 +92,6 @@ public class CustomerEntityTests {
 
     }
 
-    // TODO:
     @Test @DisplayName("Customer Entity Equality - Identity does not match")
     public void CustomerEqualityIdentityMisMatch() {
 
@@ -111,7 +102,6 @@ public class CustomerEntityTests {
 
     }
 
-    // TODO:
     @Test @DisplayName("Customer Entity Equality - First Name does not match")
     public void CustomerEqualityFirstNameMisMatch() {
 
@@ -122,7 +112,6 @@ public class CustomerEntityTests {
 
     }
 
-    // TODO:
     @Test @DisplayName("Customer Entity Equality - Last Name does not match")
     public void CustomerEqualityLastNameMisMatch() {
 
@@ -133,15 +122,12 @@ public class CustomerEntityTests {
 
     }
 
-    // TODO:
     @Test @DisplayName("Customer Entity Equality - Both Entities are equal")
     public void CustomerEntitiesEqual() {
 
         var identity = new Identity();
-        var customer1 = new Customer("Bill", "Bensing");
-        customer1.setId(identity);
-        var customer2 = new Customer("Bill", "Bensing");
-        customer2.setId(identity);
+        var customer1 = new Customer(identity, "Bill", "Bensing");
+        var customer2 = new Customer(identity, "Bill", "Bensing");
 
         Assertions.assertTrue(customer1.equals(customer2));
     }

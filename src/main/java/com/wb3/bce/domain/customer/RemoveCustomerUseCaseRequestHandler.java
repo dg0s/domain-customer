@@ -10,7 +10,6 @@ public class RemoveCustomerUseCaseRequestHandler implements UseCaseRequestHandle
         this.gateway = gateway;
     }
 
-
     @Override
     public void Handle(RemoveCustomerRequest removeCustomerRequest) {
         new RemoveCustomer(removeCustomerRequest, this.gateway).execute();
