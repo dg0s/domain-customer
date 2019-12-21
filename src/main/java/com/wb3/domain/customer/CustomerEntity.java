@@ -1,6 +1,6 @@
-package com.wb3.bce.domain.customer;
+package com.wb3.domain.customer;
 
-import com.wb3.bce.domain.kernal.Identity;
+import com.wb3.domain.kernal.Identity;
 
 public interface CustomerEntity {
 

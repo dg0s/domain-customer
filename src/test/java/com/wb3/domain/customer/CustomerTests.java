@@ -1,4 +1,4 @@
-package com.wb3.bce.domain.customer;
+package com.wb3.domain.customer;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

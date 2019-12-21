@@ -1,4 +1,4 @@
-package com.wb3.bce.domain.customer;
+package com.wb3.domain.customer;
 
 class CustomerGatewaySpy implements CustomerGateway {
 

@@ -1,7 +1,7 @@
-package com.wb3.bce.domain.customer;
+package com.wb3.domain.customer;
 
-import com.wb3.bce.domain.kernal.Entity;
-import com.wb3.bce.domain.kernal.Identity;
+import com.wb3.domain.kernal.Entity;
+import com.wb3.domain.kernal.Identity;
 
 class Customer extends Entity implements CustomerEntity   {
 

@@ -1,4 +1,4 @@
-package com.wb3.bce.domain.kernal;
+package com.wb3.domain.kernal;
 
 import java.util.UUID;
 

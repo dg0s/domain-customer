@@ -1,6 +1,6 @@
-package com.wb3.bce.domain.customer;
+package com.wb3.domain.customer;
 
-import com.wb3.bce.domain.kernal.UseCase;
+import com.wb3.domain.kernal.UseCase;
 
 public class CreateCustomer implements UseCase {
 
