@@ -23,16 +23,8 @@ public abstract class CustomerRequest {
         return this.id;
     }
 
-    protected void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getFirstName() {
         return this.firstName;
-    }
-
-    protected void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getLastName() {
