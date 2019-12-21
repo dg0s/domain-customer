@@ -40,4 +40,11 @@ public abstract class CustomerEntity {
         return this.lastName;
     }
 
+    public boolean equals(CustomerEntity entity) {
+        var id = this.id.equals(entity.getId());
+        var firstName = this.firstName.equals(entity.getFirstName());
+        var lastName = this.lastName.equals(entity.getLastName());
+        return id && firstName && lastName;
+    }
+
 }
